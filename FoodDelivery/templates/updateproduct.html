@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% include 'adminheader.html' %}
+<html>
+<head>
+    <title>Edit Data</title>
+</head>
+
+<body>
+
+    <br/><br/>
+    <form name="form1" method="post" action="../updateproduct/">
+        {% csrf_token %}
+        {% for obj in obj %}
+        <table border="0">
+            <tr>
+                <td>Name</td>
+                <td><input type="text" name="name" value="{{ obj.name }}"></td>
+            </tr>
+             <tr>
+                <td>Price</td>
+                <td><input type="text" name="price" value="{{ obj.price }}"></td>
+            </tr>
+             <tr>
+                <td>category</td>
+                <td><input type="text" name="category" value={{ obj.category }}></td>
+            </tr>
+             <tr>
+                <td>image</td>
+                <td><input type="text" name="image" value="{{ obj.image }}"></td>
+            </tr>
+
+            <tr>
+                <td><input type="hidden" name="pid" value={{ obj.pid }}></td>
+                <td><input type="submit" name="update" value="update"></td>
+            </tr>
+        </table>
+        {% endfor %}
+    </form>
+</body>
+
+
+{% include "footer.html" %}
+</html>

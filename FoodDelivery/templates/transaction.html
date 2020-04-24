@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% include 'header.html' %}
+<body>
+
+                                {% if edit %}
+
+                                    <div class="deliveryadd" style="margin-left:50px;margin-top:50px ;width: 400px">
+                                        <h2>Delivery Details:</h2>
+                                        <form action="" method="POST">{% csrf_token %}
+                                            <table style="width:200px">
+                                            <tr><td><label for="name">Name:</label></td><td><input name="name" type="text" value="{{ name }}"></td></tr>
+                                                <tr><td>Delivery Address:</td><td><textarea name="add" rows="6">{{ address }}</textarea></td></tr>
+                                            <tr><td><input class="btn" type="submit" name="save" value="Save Changes" style="width:150px;"></td></tr>
+                                            </table>
+                                        </form>
+                                    </div>
+                                    <div class="payment" style="width:500px;margin-left:500px;margin-top:-355px">
+                                    <table style="width:500px;">
+                                        <th><h4>Payment</h4></th>
+                                        <tr><td><input type="radio" name="payment" ><lable for="CreditCard" >&nbsp;&nbsp;Credit Card</lable><br><input style="width:200px" type="text" placeholder="Card Number" maxlength="12">&nbsp;&nbsp;&nbsp;<input style="width:100px" type="text" placeholder="Month" maxlength="2">&nbsp;&nbsp;<input style="width:100px" type="text" placeholder="Year" maxlength="4">&nbsp;&nbsp;<input style="width:100px;" type="password" placeholder="CVV" maxlength="3">&nbsp;&nbsp;<img width="190px" height="45px" src="{% static "img/credit.PNG" %}"></td></tr>
+                                        <tr><td><input type="radio" name="payment" ><lable for="netbanking" >&nbsp;&nbsp;Net Banking</lable></td></tr>
+                                        <tr><td><input type="radio" name="payment" checked><lable for="cod">&nbsp;&nbsp;Cash On Delivery</lable></td></tr>
+                                    </table>
+                                </div><br><br><br><br>
+
+                                <div class="checkout" style="margin-top: -395px;">
+                                    <table style="width:auto">
+                                        <th colspan="2">
+                                            <h4>Checkout</h4>
+                                        </th>
+                                        <tr class="t1">
+                                            <td>Subamount</td>
+                                            <td style="text-align:right">&#x20b9; {{ total }}</td>
+                                        </tr>
+                                        <tr class="t1">
+                                            <td>Tax</td>
+                                            <td style="text-align:right">&#x20b9; {{ tax }}</td>
+                                        </tr>
+                                        <tr class="t1">
+                                            <td colspan="2" style="text-align:right">
+                                                <b>Total:&#x20b9;{{ grand_total }}</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" style="text-align:center"><a href="../Order"><h4><input class="btn" type="submit" value="Place Your Order"></h4></a></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                {%  else %}
+                                    <div style="padding:20px;width:350px;margin-left:50px;margin-top:50px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);""><h2>Delivery Details:</h2><form action="" method="POST">{% csrf_token %}<h5>{{ name }}</h5><p>{{ address }}</p><input class="btn" type="submit" name="edit" value="Edit"></form></div>
+                                    <div class="payment" style="width:500px;margin-left:500px;margin-top:-200px">
+                                    <table style="width:500px;">
+                                        <th><h4>Payment</h4></th>
+                                        <tr><td><input type="radio" name="payment" ><lable for="CreditCard" >&nbsp;&nbsp;Credit Card</lable><br><input style="width:200px" type="text" placeholder="Card Number" maxlength="12">&nbsp;&nbsp;&nbsp;<input style="width:100px" type="text" placeholder="Month" maxlength="2">&nbsp;&nbsp;<input style="width:100px" type="text" placeholder="Year" maxlength="4">&nbsp;&nbsp;<input style="width:100px;" type="password" placeholder="CVV" maxlength="3">&nbsp;&nbsp;<img width="190px" height="45px" src="{% static "img/credit.PNG" %}"></td></tr>
+                                        <tr><td><input type="radio" name="payment" ><lable for="netbanking" >&nbsp;&nbsp;Net Banking</lable></td></tr>
+                                        <tr><td><input type="radio" name="payment" checked><lable for="cod">&nbsp;&nbsp;Cash On Delivery</lable></td></tr>
+                                    </table>
+                                </div><br><br><br><br>
+
+                                <div class="checkout" style="margin-top: -395px;">
+                                    <table style="width:auto">
+                                        <th colspan="2">
+                                            <h4>Checkout</h4>
+                                        </th>
+                                        <tr class="t1">
+                                            <td>Subamount</td>
+                                            <td style="text-align:right">&#x20b9; {{ total }}</td>
+                                        </tr>
+                                        <tr class="t1">
+                                            <td>Tax</td>
+                                            <td style="text-align:right">&#x20b9; {{ tax }}</td>
+                                        </tr>
+                                        <tr class="t1">
+                                            <td colspan="2" style="text-align:right">
+                                                <b>Total:&#x20b9;{{ grand_total }}</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" style="text-align:center"><a href="../Order"><h4><input class="btn" type="submit" value="Place Your Order"></h4></a></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                {% endif %}
+
+
+
+</body>
+<div style="margin-top:400px;margin-left: -500px">{% include 'footer.html' %}</div>
+</html>

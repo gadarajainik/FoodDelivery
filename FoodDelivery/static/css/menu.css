@@ -1,0 +1,355 @@
+
+*
+{
+    box-sizing: border-box;
+    text-decoration: none!important;
+}
+
+.login{
+    text-align: left;
+    color:white;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown{
+    margin-left: 750px;
+    margin-top:-25px;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+    margin-left: -45px;
+
+}
+.l3{
+    text-align: center;
+}
+.dropdown-content a {
+    background-color: black;
+    float: none;
+    color: white;
+    padding: 5px 16px;
+    display: block;
+    text-align: left;
+    font-family:serif;
+}
+.dropbtn{
+    background: transparent;
+    color:gray;
+    border: none;
+}
+.loginlayout{
+    list-style-type: none;
+    padding-top: 20px;
+    padding-right: 33px;
+}
+
+.sidenav {
+    height:45%;
+    width: 180px;
+    position:absolute;
+    z-index: 1;
+    top:65%;
+     left: 0;
+    /*margin-left: 300px;*/
+    background-color:black;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 35px;
+  }
+
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+      color: white;
+  }
+
+  .sidenav a:hover {
+    color:black;
+      background-color: white;
+  }
+
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+
+  }
+.login-style{
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    background-color: white;
+    width:350px;
+    height:350px;
+
+}
+.checkout{
+    float: right;
+    margin-right: 100px;
+    margin-top: -220px;
+
+    border-style: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.payment{
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-top: 80px;
+}
+.deliveryadd{
+    margin-top: 350px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.t1{
+    background-color: white;
+    border-style: none;
+}
+.btn{
+    border-color:  #555555;
+    background-color: #555555;;
+    color: white;
+    border: 2px solid;
+}
+
+.btn:hover{
+    background-color: black;
+    color: white;
+}
+
+.nimisha{
+    background-color: black;
+}
+.deals{
+    height: 200%;
+    width: 100%;
+    background-color: black;
+}
+.display{
+    font-family: 'Muli', sans-serif;
+    font-weight: bolder;
+    color: white;
+    text-shadow: 2px 1px grey;
+    font-size: 60px;
+    margin-left:-800px;
+ }
+.display2{
+    font-family:  'Quicksand', sans-serif;
+    font-weight: bolder;
+    color: white;
+    font-size: 20px;
+    margin-left: 130px;
+}
+.deals_title{
+    color:white;
+    padding-top:50px;
+    padding-left: 50px;
+
+
+}
+.deals_cards{
+    padding-left:300px;
+    padding-top: 0px;
+
+
+}
+.n1{
+    display: inline-block!important;
+    margin-right: 36px;
+    margin-top: 80px
+}
+.footer{
+
+    height: 30%;
+    width: 100%;
+    background-color: orange;
+
+}
+.about{
+    width:33%;
+    height: 100%;
+    display: inline-block;
+    text-align: center;
+    padding-top: 20px;
+}
+.legal{
+    width:33%;
+    height: 100%;
+    display: inline-block;
+    text-align: center;
+    padding-top: 20px;
+}
+.socialmedia{
+    width:33%;
+    height: 100%;
+    display: inline-block;
+    text-align: center;
+    padding-top: 20px;
+}
+.footer
+{
+
+    width: 100%;
+    height:30%;
+    background-color: orange;
+    position: relative;
+}
+
+.about
+{
+    width:33%;
+    display: inline-block;
+    text-align: center;
+    padding-top:20px;
+}
+
+
+.legal
+{
+    width:33%;
+    display: inline-block;
+    text-align: center;
+    padding-top:20px;
+}
+
+
+.socialmedia
+{
+    width:33%;
+    display: inline-block;
+    text-align: center;
+    position: absolute;
+    padding-top:20px;
+
+}
+
+.ulno_marg
+{
+    list-style: none;
+    padding-left:0!important;
+    padding-top:10px;
+}
+
+.footer_li
+{
+    padding-bottom:10px;
+    font-size:18px;
+}
+.a1:active{
+    color:darkslategrey;
+}
+.a1:hover{
+    color:darkslategrey;
+}
+.a1:visited{
+    color:darkslategrey;
+}
+i{
+    font-size: 30px;
+    padding-left: 20px;
+    padding-top:20px;
+}
+/*CART FILE*/
+table{
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+    height: 200px;
+
+}
+.full{
+    height: 100%;
+    margin-top: 100px;
+    text-align: center;
+    font-size: x-large;
+}
+td, th {
+    border: 1px solid #dddddd;
+
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+div.container{
+    margin: 50px 10px 50px 1000px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: rgb(169,169,169);
+    padding: 10px;
+    width:250px;
+    height:280px;
+
+}
+div.promo
+{
+    margin:auto; 
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: black; 
+    background-color: rgb(169,169,169);
+}
+td.l1{
+    width:300px;
+    color:black;
+    text-align: center;
+}
+td.l4{
+    width:150px;
+    text-align: center;
+}
+
+td.l2{
+    width:auto;
+    text-align: center;
+
+}
+.up{
+
+    border-bottom-style: none;
+    background-color: transparent;
+
+    padding-bottom: 13px;
+    padding-top: 13px;
+    padding-left:13px;
+    margin-bottom: 30px;
+    height: 30px;
+    font-family: Helvetica;
+    color:black;
+
+}
+.sub{
+    background-color:black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color:white;
+
+    border-bottom-style: none;
+    height: 35px;
+    width:280px;
+    height: 65px;
+    font-style: normal;
+}
+.uplayout{
+    text-align: center;
+    background-color: rgb(240, 240, 240);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 65px;
+    width:280px;
+}
+

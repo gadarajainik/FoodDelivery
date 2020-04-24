@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{%load staticfiles%}
+{% include 'header.html' %}
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="{% static 'css/reg.css' %}">
+    </head>
+    <body style="background-color: black">
+        <div class="signup-form" style="width: 500px;height: 1000px;">
+            <form action="../adduser_details/" method="post" style="height:700px;">
+                {% csrf_token %}
+                <center><b style="color:red">{{ msg }}</b></center>
+    <h2>Sign Up</h2>
+                <p>Please fill in this form to create an account!</p>
+                <hr>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-xs-6"><input type="text" class="form-control" name="fname" placeholder="First Name" required="required"></div>
+                        <div class="col-xs-6"><input type="text" class="form-control" name="lname" placeholder="Last Name" required="required"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="username" placeholder="Username" required="required" style="width:100%">
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-xs-6" ><input type="password" class="form-control" name="pwd" placeholder="Password" required="required" style="color: black"></div>
+                        <div  class="col-xs-6"><input type="password" class="form-control" name="rpwd" placeholder="Confirm Password" required="required" style="color: black"></div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-xs-6"><input type="email" class="form-control" name="email" placeholder="Email" required="required"></div>
+                    <div class="col-xs-6"><input type="text" class="form-control" name="mobile" placeholder="Mobile Number" maxlength="10" required="required"></div>
+                </div>
+
+                <div class="form-group">
+                    <textarea class="form-control" name="address" placeholder="Address" required="required"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+                </div>
+                <div class="hint-text"><a href="../login/" style="color: black">Already have an account? </a></div>
+            </form>
+
+        </div>
+    </body>
+</html>
+{% include 'footer.html' %}

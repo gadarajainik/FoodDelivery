@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% include 'header.html' %}
+<body>
+
+        <div class="swe1">
+            <h4 class="display-4" style="margin-top: 30px;">MY PREVIOUS ORDERS:</h4>
+        </div>
+
+
+
+        <div class="sai" style="margin-top: 100px;margin-bottom: 200px;">
+
+            {% for order,key1 in all.items %}
+
+                <b>Ordered on:</b>{{ key1.date }}<br>
+                <b>Delivered At:</b>&nbsp;&nbsp;{{ key1.address }}<br><br>
+                <table class="table table-hover table-bordered">
+
+                    <thead class="thead-dark">
+                        <tr>
+
+                            <th scope="row">Image</th>
+                            <th scope="row">Product Name</th>
+                            <th scope="row">Quantity</th>
+                            <th scope="row">Price</th>
+
+
+
+                        </tr>
+                    </thead>
+                    {% for ob2,keys in key1.items1.items %}
+                        <tr>
+                    <td><img src="{% static keys.image %}" height="80px" width="80px"></td>
+                        <td>{{ keys.name }}</td>
+                        <td>{{keys.quantity}}x</td>
+                        <td>{{ keys.price }}</td>
+                        </tr>
+                    {% endfor %}
+                    <tr>
+                        <td colspan="4" style="text-align: right"><b>Total:{{ key1.total }}</b></td>
+                    </tr>
+                </table>
+            <br><br><br>
+        {% endfor %}
+        </div>
+    </body>
+
+</html>

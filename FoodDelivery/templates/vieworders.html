@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% include 'adminheader.html' %}
+<html>
+<head>
+    <title>Homepage</title>
+</head>
+
+<body>
+
+    <div class="swe1">
+        <h4 class="display-4" style="margin-top: 30px;">ALL ORDERS:</h4>
+    </div>
+
+
+    <div class="sai" style="margin-top: 200px;margin-bottom: 200px;">
+
+    <table class="table table-hover table-bordered">
+
+    <thead class="thead-dark">
+    <tr>
+        <th scope="row">Order-ID</th>
+        <th scope="row">Username</th>
+        <th scope="row">Date</th>
+        <th scope="row">Price</th>
+        <th scope="row">Address</th>
+
+
+    </tr>
+</thead>
+    {% for q in obj %}
+        <tr>
+        <td>{{ q.order_id }}</td>
+        <td>{{ q.username }}</td>
+        <td>{{ q.date }}</td>
+        <td>{{ q.total }}</td>
+        <td>{{ q.delivery_address }}</td>
+        </tr>
+
+     {% endfor %}
+
+</tr>
+    </table>
+
+
+</div>
+</body>
+{% include 'footer.html' %}
+</html>

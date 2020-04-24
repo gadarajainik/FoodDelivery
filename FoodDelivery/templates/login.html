@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% include 'header.html' %}
+<html>
+<body>
+    <center>
+        <div class="loginbox">
+            <!--<img src="../images/avatar.png" class="avatar">-->
+            {% if not msg %}
+                <p style="color:red"></p>
+            {% else %}
+                <p style="color:white">{{ msg }}</p>
+            {% endif %}
+            <h1>Login</h1>
+
+            <form action="../auth/" method="post">
+                {% csrf_token %}
+                <p>Username</p>
+                <input type="text" id="username" name="username" placeholder="Enter Username">
+                <p>Password</p>
+                <input type="password" id="password" name="password" placeholder="Enter Password"><br></br>
+                <input type="submit" name="login" value="Login">
+                <a href="../Register">Don't have an account?</a>
+            </form>
+        </div>
+    </center>
+    <div style="margin-top:700px">{% include 'footer.html' %}</div>
+    </body>
+
+{#{% include 'footer.html' %}#}

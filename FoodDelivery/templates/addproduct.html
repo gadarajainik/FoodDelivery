@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% include 'adminheader.html' %}
+<html>
+    <head>
+        <style>
+            body{
+                background-color: white;
+            }
+        </style>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>
+            ADD PRODUCTS
+        </title>
+        <link rel="stylesheet" href="{% static 'css/addproduct.css' %}">
+    </head>
+    <h4 style="color: red">{{ msg }}</h4>
+    <form action="../addproduct/" method="post">
+        {% csrf_token %}
+        <div class="container" style="margin-left:450px;width:500px;height: 850px;">
+            <h1>ADD PRODUCTS</h1>
+            <p>fill all details</p>
+            <hr>
+            <label for="pid"><b>Product-ID</b></label>
+            <input type="text" placeholder="Enter name" name="pid" required>
+
+            <label for="name"><b>name</b></label>
+            <input type="text" placeholder="Enter name" name="name" required>
+
+            <label for="name"><b>price</b></label>
+            <input type="text" placeholder="Enter price" name="price" required>
+
+
+
+            <label for="name"><b>Category</b></label>
+            <input type="text" placeholder="enter category" name="category" required>
+
+
+            <label for="name"><b>Enter image address</b></label>
+            <input type="text" placeholder="enter image" name="image" required>
+            <hr>
+
+            <input type="submit" name="add" value="Add" class="registerbtn">
+
+        </div>
+
+
+    </form>
+</html>
+{% include 'footer.html' %}

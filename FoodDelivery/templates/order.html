@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% include 'header.html' %}
+<body>
+
+        <center><h4 style="color:green">Your Order Is Successfully Placed</h4><form action="" method="POST">{% csrf_token %}<br><a href="../Menu?category=mains"><input class="btn" type="submit" name="continue" value="Continue Ordering"></a></form></center>
+
+        <br><br><center><h3 style="color:gray;">----SUMMARY----</h3><center><br>
+                <center>
+                    <table border="2" style="float:left;margin-left: 50px;margin-top: 50px; width: 800px">
+
+
+                        {%  for obj,key in cart.items %}
+
+                            <!--<div class="l3">-->
+                            <tr>
+                                <td  width="50px"><img src="{% static  key.image  %}" height="80px" width="80px" ></img></td>
+                                <td class="l1">{{ key.name }}</td>
+                                <td class="l4">{{ key.quantity }}</td>
+                                <td class="l2">&#x20b9; {{ key.item_total }}</td>
+                            </tr>
+                        {% endfor %}
+                        <tr><td style="text-align: right" colspan="4"><h4>SubAmount: &#x20b9;{{ total }}</h4></tr>
+                        <tr><td style="text-align: right" colspan="4"><h4>Tax: &#x20b9;{{ tax }}</h4></tr>
+                        <tr><td style="text-align: right" colspan="4"><h4>Amount: &#x20b9;{{ grand_total }}</h4></tr>
+                    </table></center><br><br>
+
+</body>
+<div style="margin-top:500px">{% include 'footer.html' %}</div>
+</html>

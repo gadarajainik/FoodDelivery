@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% include 'header.html' %}
+                                <div class="deals">
+                                    <div class="deals_title">
+                                        <h1>Top amazing Pizzas!!!</h1>
+                                    </div>
+                                    <div class="sidenav" id="mySidenav">
+
+                                        <a href="../Menu?category=mains"><b>Mains</b></a>
+                                        <a href="../Menu?category=sides"><b>Sides</b></a>
+                                        <a href="../Menu?category=beverages"><b>Beverages</b></a>
+                                        <a href="../Menu?category=dessert"><b>Dessert</b></a>
+                                    </div>
+                                    <div class="deals_cards">
+                                          {% for ob in obj %}
+                                                <div class="card n1" style="width: 18rem;">
+                                                      <img class="card-img-top" src="{% static ob.image %}" alt="Card image cap">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">"{{ ob.name }}"</h5>
+                                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                                        <b>&#x20b9;{{ ob.price }}</b>
+
+                                                        <a href="../Menu?category={{ ob.category }}&action=add&pid={{ ob.pid }}"  class="btn btn-primary">Add To Cart</a>
+                                                    </div>
+                                                </div>
+                                        {% endfor %}
+                                    </div><br><br><br><br>
+                                </div>
+{% include 'footer.html' %}

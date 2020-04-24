@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% include 'header.html' %}
+<body>
+<center>
+
+
+        {% if empty %}
+            <center><div class="full"><b>Your Cart is Empty</b><br><br><a href="../Menu?category=mains"><input class="btn" type="button" value="Continue Shopping"></a></div></center>
+
+        {% else %}
+            <h3 style="color:gray;text-height: 5px">----YOUR CART----</h3><br>
+            <table border="2" style="float:left;margin-left: 50px;margin-top: 50px; width: 800px" >
+            {%  for  item,key in cart.items %}
+
+                <tr>
+                    <td  width="50px"><img src="{% static key.image %}" height="80px" width="80px" >{{ image }}</td>
+                    <td class="l1">{{  key.name }}</td>
+                    <td class="l4"><a href="../Cart?action=remove&pid={{ key.pid }}"><i class="fas fa-minus" style="padding:1px; background-color: gray; border: 2px solid;border-radius: 20px;color:white;"></i></a>{{ key.quantity }}<a href="../Cart?action=add&pid={{ key.pid }}"><i class="fas fa-plus" style="padding:1px; background-color: gray; border: 2px solid;border-radius: 20px;color:white;"></i></a> x {{ key.price }}</td>
+                    <td class="l3"><a href="../Cart?action=delete&pid={{ key.pid }}"><i class="fas fa-trash-alt" style="padding:1px; background-color: transparent; border:none;border-radius: 20px;color:gray;"></i></a></td>
+                    <td class="l2">&#x20b9;{{ key.item_total }}</td>
+
+                </tr>
+            {% endfor %}
+            <tr>
+                <td colspan="4" style="text-align:right;">
+                    <b>Total:</b>
+                </td>
+                <td class="l2" ><b>&#x20b9;</b>{{ total }}</td>
+            </tr>
+            </table>
+            <div class="container" style="height: 350px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" >
+            <div style="text-align:left;display:inline "><h5>Subamount :</h5><h5 style="text-align:right">&#x20b9;{{ total }}</h5><br></br></div>
+            <div style="text-align:left;display:inline "><h5>Tax : </h5><h5 style="text-align:right">&#x20b9;{{ tax }}</h5></div>
+                        <br><h3>Grand Total: {{ grand_total }}</h3>
+                                        <form action="../Transaction/" method="POST">{% csrf_token %}
+                                            <input class="btn" type="submit" name="proceed" value="Checkout">
+                                        </form>
+            </div>
+
+
+        {% endif %}
+</body>
+<div style="margin-top:800px;">{% include "footer.html" %}</div>
+</html>
